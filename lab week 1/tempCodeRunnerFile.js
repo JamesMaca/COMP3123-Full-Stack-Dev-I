@@ -1,0 +1,3 @@
+// stud.prototype.s = function(){
+
+// }
