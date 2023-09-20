@@ -1,0 +1,20 @@
+{
+  "name": "node_example",
+  "version": "1.0.0",
+  "description": "Sample code to learn nodejs framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "nodejs",
+    "fall2023",
+    "comp3123",
+    "server",
+    "http",
+    "REST"
+  ],
+  "author": "James MacAloney",
+  "license": "ISC"
+}
