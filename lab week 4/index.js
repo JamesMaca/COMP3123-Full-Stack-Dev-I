@@ -5,18 +5,19 @@ const SERVER_PORT = 8089
 var app = express()
 
 //Static middlerware
-app.use("/test", express.static("./public"), "/")
+app.use("/test", express.static("./public"))
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
 
-
-// app.get("/index", (req, res) => {
-//     res.sendFile(__dirname + "/public/index.html")
-// })
-
-app.get("/", (req, res) => {
-    res.status(200).send("<h1>Welcome to Express Server</h1>")
-    res.send()
-    // res.end()
+app.get("/index", (req, res) => {
+    res.sendFile(__dirname + "/public/index.html")
 })
+
+// app.get("/", (req, res) => {
+//     res.status(200).send("<h1>Welcome to Express Server</h1>")
+//     res.send()
+//     // res.end()
+// })
 
 app.get("/home", (req, res) => {
     
@@ -50,7 +51,7 @@ app.get("/student/:fname/:lname", (req, res) => {
 })
 
 
-//http://localhost:8089/student/student?fnm=james&lnm=macaloney
+//http://localhost:8089/student?fnm=james&lnm=macaloney
 //Query Parameter
 app.get("/emp", (req, res) => {
     // res.json(req.query)
@@ -59,6 +60,14 @@ app.get("/emp", (req, res) => {
     }
 })
 
+//get data as a body parameter
+//use Postman or curl to invoke these endpoints
+//http://localhost:8089/faculty
+app.post("/faculty", (req, res) => {
+    let data = req.body //get body data
+    console.log(data)
+    res.send(data)
+})
 
 
 app.listen(SERVER_PORT, () => {
