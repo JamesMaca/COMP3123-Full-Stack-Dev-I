@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 const router = express.Router();
+const fs = require('fs');
+const path = require("path")
+const userData = require('./user.json')
 
 /*
 - Create new html file name home.html 
@@ -39,16 +42,41 @@ router.get('/profile', (req,res) => {
         message: "Password is invalid"
     }
 */
+//http://localhost:8081/login?username=bret&password=bret@123
+//http://localhost:8081/login?username=brt&password=bret@123
+//http://localhost:8081/login?username=bret&password=bret@12
 router.get('/login', (req,res) => {
-  res.send('This is login router');
+
+  const {username, password} = req.query;
+
+  if(userData.username == username && userData.password == password){
+        res.send({
+          status: true,
+          message: "User Is valid"
+        });
+      }else if(userData.username !== username){
+        res.send({
+          status: false,
+          message: "User Name is invalid"
+        });
+      }else if(userData.password !== password){
+        res.send({
+          status: false,
+          message: "Password is invalid"
+        });
+      }
 });
 
 /*
 - Modify /logout route to accept username as parameter and display message
     in HTML format like <b>${username} successfully logout.<b>
 */
+//http://localhost:8081/logout?username=bret
 router.get('/logout', (req,res) => {
-  res.send('This is logout router');
+  const {username} = req.query;
+  if(userData.username == username){
+    res.send(`<h1>${username} successfully logout</h1>`)
+  }
 });
 
 app.use('/', router);
