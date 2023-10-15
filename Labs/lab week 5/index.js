@@ -16,10 +16,8 @@ var v1api = express()
 //Application level middleware
 app.use((req, res, next) => {
     console.log("file: index.js:18 ~ app.use ~ req:", req)
-    
     console.log(`Application Middleware: ${req.method} - ${req.url}`)
     next()
-
 })
 
 //Route level middleware

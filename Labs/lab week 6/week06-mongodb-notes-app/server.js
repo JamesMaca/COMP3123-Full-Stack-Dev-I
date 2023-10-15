@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const noteRoutes = require("./routes/NoteRoutes");
 
 const DB_URL = "mongodb+srv://jjmm:leafs@cluster0.kzivlod.mongodb.net/comp3123labexec6?retryWrites=true&w=majority"
 const app = express();
@@ -20,8 +21,10 @@ mongoose.connect(DB_URL, {
     process.exit();
 });
 
+app.use("/note", noteRoutes);
+
 // http://localhost:3000/
-app.get('/', (req, res) => {
+app.route("/").get((req, res) => {
     res.send("<h1>Welcome to Note taking application - Week06 Exercise</h1>");
 });
 
