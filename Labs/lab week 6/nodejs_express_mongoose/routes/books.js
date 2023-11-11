@@ -21,6 +21,7 @@ routes.get("/books", async (req, res) => {
 
 //Add NEW Book
 routes.post("/books", async (req, res) => {
+    
     console.log(req.body)
     try{
         const newBook = new BookModel({
