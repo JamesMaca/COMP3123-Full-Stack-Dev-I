@@ -14,6 +14,10 @@ export default class Hello extends Component {
         e.preventDefault()
         alert('Hello : ' + e.target.value)
         console.log(this.state)
+        this.setState({
+          ...this.state,
+          name: e.target.value
+      })
     }
 
     onValueChanged = (event) => {

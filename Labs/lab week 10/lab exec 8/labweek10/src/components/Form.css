@@ -1,0 +1,29 @@
+.firstLine{
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.firstLine label{
+    display: block;
+}
+
+input[type="text"] {
+    flex: 1;
+    margin: 10px;
+    padding: 5px;
+}
+
+.address label{
+    display: block;
+}
+
+.addressInfo{
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.addressInfo label{
+    display: block;
+}
