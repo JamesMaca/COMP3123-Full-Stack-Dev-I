@@ -9,6 +9,7 @@ const v1api = express()
 const SERVER_PORT = 3030
 
 const DB_CONNECTION_STRING = "mongodb+srv://jjmm:leafs@cluster0.kzivlod.mongodb.net/comp3123_assigment1?retryWrites=true&w=majority";
+// const DB_CONNECTION_STRING = "mongodb://mongodb:27017/comp3123_assigment2";
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));

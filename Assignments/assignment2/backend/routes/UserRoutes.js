@@ -1,7 +1,9 @@
 const express = require('express')
 const UserModel = require('../models/UserModels')
+const cors = require('cors');
 
 const routes = express.Router()
+routes.use(cors());
 
 //CREATE ACCOUNT - POST********************************************************************
 // Allow user to create new account
@@ -36,13 +38,13 @@ routes.post('/login', async (req, res) => {
                     password: password
                 })
             }else{
-                res.send({
+                res.status(401).send({
                     status: false,
                     message: 'Invalid Username and/or password'
                 })
             }
         }else{
-            res.send({
+            res.status(401).send({
                 status: false,
                 message: 'Invalid Username and/or password'
             })

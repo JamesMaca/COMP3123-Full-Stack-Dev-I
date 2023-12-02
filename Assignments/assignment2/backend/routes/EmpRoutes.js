@@ -1,7 +1,9 @@
 const express = require('express')
 const EmpModel = require('../models/EmpModels')
+const cors = require('cors');
 
 const routes = express.Router()
+routes.use(cors());
 
 //CREATE NEW EMPLOYEE *****************************************************************
 //User can create new employee
