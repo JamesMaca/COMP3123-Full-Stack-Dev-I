@@ -6,3 +6,4 @@
             docker-compose -p comp3123-assignment2 -f docker-compose.yml up -d
 
 2. Login page
+![image](https://github.com/JamesMaca/COMP3123-Full-Stack-Dev-I/assets/121572130/adf33fed-6546-41da-afbc-3088fa8d7cf7)
