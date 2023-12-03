@@ -2,7 +2,7 @@
 ## James MacAloney - 101362896
 ### Date: Dec 02 2023
 
-1. To execute the containers you can run the following command in the terminal/cmd line when in the root directory of the project.
+1. To execute the containers you can run the following command in the terminal/cmd line when in the root directory of the project. This will create the containers and start them when they are done compilling.
 
             docker-compose -p comp3123-assignment2 -f docker-compose.yml up -d
 
